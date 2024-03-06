@@ -1,9 +1,11 @@
-function App() {
+import TodoList from './components/todo-list'
+
+function App () {
   return (
-    <>
-      <div>Hi</div>
-    </>
-  );
+    <main className='flex h-dvh justify-center items-center'>
+      <TodoList />
+    </main>
+  )
 }
 
-export default App;
+export default App
