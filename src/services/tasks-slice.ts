@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-interface Task {
+export interface Task {
   id: number;
   name: string;
   completed: boolean;
