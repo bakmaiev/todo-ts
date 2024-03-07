@@ -1,7 +1,12 @@
 import React, { ChangeEvent, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectFilter, selectTasks } from '../services/selectors'
-import { addTask, setFilter, toggleTaskStatus } from '../services/tasks-slice'
+import {
+  addTask,
+  setFilter,
+  toggleTaskStatus,
+  deleteTask,
+} from '../services/tasks-slice'
 import Input from './input'
 import Button from './button'
 import Select from './select'
@@ -20,7 +25,7 @@ const TodoList: React.FC = () => {
   const filteredTasks = filterTasks(tasks, filter)
 
   const handleAddTask = () => {
-    if (newTask.length <= SYMBOL_LIMIT) {
+    if (newTask.length <= SYMBOL_LIMIT && newTask.length > 0) {
       dispatch(addTask(newTask))
       setNewTask('')
     }
@@ -34,6 +39,10 @@ const TodoList: React.FC = () => {
     dispatch(toggleTaskStatus(id))
   }
 
+  const handleDeleteTask = (id: number) => {
+    dispatch(deleteTask(id))
+  }
+
   return (
     <div className='p-4 bg-gray-100 rounded shadow-lg'>
       <Input
@@ -43,7 +52,12 @@ const TodoList: React.FC = () => {
       <Button onClick={handleAddTask}>Add Task</Button>
       <Select filter={filter} onChange={handleFilterChange} />
       {filteredTasks.map((task) => (
-        <TaskItem task={task} onToggleTaskStatus={handleToggleTaskStatus} />
+        <TaskItem
+          key={task.id}
+          task={task}
+          onToggleTaskStatus={handleToggleTaskStatus}
+          onDeleteTask={handleDeleteTask}
+        />
       ))}
       <TaskStats tasks={tasks} />
     </div>
