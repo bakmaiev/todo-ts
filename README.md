@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# React ToDo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple Todo List application built with React and Redux Toolkit.
 
-Currently, two official plugins are available:
+![ToDo App Preview](/src/assets/preview.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add new tasks** 
+- **Toggle task status:** Completed/not completed.
+- **Delete tasks** 
+- **Filter tasks:** All/completed/current.
+- **Persist state across page refreshes** 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A fast build tool that provides a faster development experience for modern web projects.
+- **Redux Toolkit:** An opinionated library for managing state in React applications.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+- **Redux Persist:** A library for saving and rehydrating Redux stores.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Running Locally
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+If you want to run the project locally, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/bakmaiev/todo-ts.git
+
+# Navigate to the project directory
+cd todo-ts
+
+# Install dependencies
+npm install
+
+# Start the local development server
+npm run dev
